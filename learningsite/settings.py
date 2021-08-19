@@ -148,5 +148,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'place your mail here' #official mail from which the reset link wll besent to the users requesting for the reset.
-EMAIL_HOST_PASSWORD = 'place your mail password here' #actual password of your mail address
+EMAIL_HOST_USER = 'alearning694@gmail.com' #official mail from which the reset link wll besent to the users requesting for the reset.
+EMAIL_HOST_PASSWORD = '@pple 123' #actual password of your mail address
