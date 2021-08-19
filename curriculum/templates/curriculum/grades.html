@@ -1,0 +1,77 @@
+{% extends 'user/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid contact-hero">
+    <div class="row">
+        <div class="col-12">
+            <h2>Grades<h2>
+            <p>We provide the learning materials from grade 1 to grade 10. You can choose your grade from the section below and enjoy learning.
+            </p>
+        </div>
+    </div>
+</div>
+{% if context %}
+
+<div class="container grades-container">
+    <div class="row my-grades">
+
+        {% for x in context %}
+        <div class="col-md-3 grade">
+            <a class="d-bock" href="{% url 'grades_subjects' x.id %}">{{x.grade}}</a>
+            <div>
+            <a class="btn btn-primary d-block" href="{% url 'grades_subjects' x.id %}">View Subjects</a>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- <div class="col-md-3 grade">
+            <a href="#">Grade 2</a>
+            <a class="btn btn-primary d-block" href="#">View Subjects</a>
+        </div>
+        <div class="col-md-3 grade">
+            <a href="#">Grade 3</a>
+            <a class="btn btn-primary d-block" href="#">View Subjects</a>
+        </div>
+        <div class="col-md-3 grade">
+            <a href="#">Grade 4</a>
+            <a class="btn btn-primary d-block" href="#">View Subjects</a>
+        </div>
+        <div class="col-md-3 grade">
+            <a href="#">Grade 5</a>
+            <a class="btn btn-primary d-block" href="#">View Subjects</a>
+        </div>
+        <div class="col-md-3 grade">
+            <a href="#">Grade 6</a>
+            <a class="btn btn-primary d-block" href="#">View Subjects</a>
+        </div>
+        <div class="col-md-3 grade">
+            <a href="#">Grade 7</a>
+            <a class="btn btn-primary d-block" href="#">View Subjects</a>
+        </div>
+        <div class="col-md-3 grade">
+            <a href="#">Grade 8</a>
+            <a class="btn btn-primary d-block" href="#">View Subjects</a>
+        </div>
+        <div class="col-md-3 grade">
+            <a href="#">Grade 9</a>
+            <a class="btn btn-primary d-block" href="#">View Subjects</a>
+        </div>
+        <div class="col-md-3 grade">
+            <a href="#">Grade 10</a>
+            <a class="btn btn-primary d-block" href="#">View Subjects</a>
+        </div> -->
+    </div>
+</div>
+{% else %}
+<div class="container subject-container mb-5 text-center">
+
+    <div class="spinner-grow text-center" role="status">
+    </div>
+
+    <div class="">No any Grades has been added by the admin.</div>
+</div>
+
+{% endif %}
+
+{% endblock %}

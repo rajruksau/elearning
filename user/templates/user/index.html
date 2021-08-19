@@ -1,0 +1,67 @@
+{% extends 'user/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'user/mystyle.css' %}">
+
+<div class="container-fluid">
+    <div class="row bg-image">
+        <div class="col-12" style="padding:0% !important;">
+            <img class="hero-image" src="../../static/user/learning-hero.jpg" alt="">
+            <div class="overlay">
+
+            </div>
+            <div class="hero-center">
+                <!-- <img src="../../static/user/mainnyy.png" alt="learn" width="255"> -->
+                <h2 class="text-white font-weight-bold">Welcome to the Non-Profit e-Learning Platform</h2>
+                <p><i>Connect.Learn.Update</i></p>
+                <a class="my-btn btn-primary" href="{% url 'grades' %}">View Curriculum</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <p class="offer">What we offer</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <p class="offer-text">We offer all the curriculams from grade 1 to grade 10 along with the syllabus of the
+                respective subjects. You can enjoy the curriculam from any of these grades in our platform.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container my-cards">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-5 mb-5">
+        <div class="col-md-6">
+            <div class="card h-100">
+                <img src="../../static/user/grades.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Grades</h5>
+                    <p class="card-text">We provide the learning materials from grade 1 to grade 10. You can choose your
+                        grade from the curriculam section and enjoy learning.</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card h-100">
+                <img src="../../static/user/syllabus.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Syllabus</h5>
+                    <p class="card-text">All the syllabus as defined by the education board is kept in place for every
+                        grades, so that you can learn the subject and topics of your interest.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

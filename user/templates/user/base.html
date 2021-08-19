@@ -1,0 +1,76 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'user/mystyle.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'user/fav.png' %}" />
+
+    <title>E-Learning Website</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-blue">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}">e-LEARN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" style="justify-content: flex-end!important;" id="navbarText">
+                {% with request.resolver_match.url_name as url_name %}
+
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="{% if url_name == 'index' %}nav-link active{% else %}nav-link{% endif %}" aria-current="page" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="{% if url_name == 'grades' %}nav-link active{% elif url_name == 'grades_subjects' %} nav-link active {% else %} nav-link{% endif %}" href="{% url 'grades' %}">Curriculum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="{% if url_name == 'contact' %}nav-link active{% else %}nav-link{% endif %}" href="{% url 'contact' %}">Contact Us</a>
+                    </li>
+                </ul>
+                {% endwith %}
+
+                <span class="navbar-text">
+
+                    <a href="#" class="px-4 text-white text-uppercase user" title="Loggedin User">
+                        <span class="badge badge-pill badge-success">{{user.username}}</span>
+                    </a>
+
+                    <!-- <a href="{% url 'login' %}" class="btn btn-primary text-white">
+                        Login
+                    </a>
+                    <a href="{% url 'register' %}" class="btn btn-success text-white">
+                        Register
+                    </a> -->
+                    <a href="{% url 'logout' %}" class="btn btn-danger text-white">
+                        Logout
+                    </a>
+
+                    
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock content %}
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row foot-row">
+                <p>&copy; e-LEARN 2021 All rights reserved </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

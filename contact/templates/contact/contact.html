@@ -1,0 +1,66 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container-fluid contact-hero">
+    <div class="row">
+        <div class="col-12">
+            <h2>Contact<h2>
+            <p>We have been serving as an e-learning platform since couple of years. If you have any queries regarding us, or any subjects and grades please feel free to each us. Leave your message and we will be in touch with you as soon as possible.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="contact-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.089610616385!2d151.11908466520796!3d-33.7841840306797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a60a6daa8a45%3A0xce5419946a3dec7a!2s1%20Lyonpark%20Rd%2C%20Macquarie%20Park%20NSW%202113%2C%20Australia!5e0!3m2!1sen!2snp!4v1628495551360!5m2!1sen!2snp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.6213825757095!2d85.35703441548193!3d27.698094632504443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1a266b342bc5%3A0x73bbfa829a89af1b!2sTribhuvan%20International%20Airport!5e0!3m2!1sen!2snp!4v1628073668163!5m2!1sen!2snp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+    <div class="my-form">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input class="send-btn" type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+<!-- <form action="" method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="yTF5g7ceTgkwsOimKxZpuV10DG4a1TWFwQ60pneu047lPvu6kTAlNYPfYEC9G8jq">
+    <tr>
+        <th>
+            <label for="id_name">Name:</label>
+        </th>
+        <td>
+            <input type="text" name="name" maxlength="255" required id="id_name">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <label for="id_email">Email:</label>
+        </th>
+        <td>
+            <input type="email" name="email" maxlength="254" required id="id_email">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <label for="id_subject">Subject:</label>
+        </th>
+        <td>
+            <input type="text" name="subject" maxlength="255" required id="id_subject">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <label for="id_message">Message:</label>
+        </th>
+        <td>
+            <textarea name="message" cols="40" rows="10" required id="id_message"></textarea>
+        </td>
+    </tr>
+    <input type="submit" value="Submit">
+</form> -->
+
+{% endblock %}
